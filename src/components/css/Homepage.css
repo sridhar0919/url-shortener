@@ -1,0 +1,24 @@
+.title-web {
+  font-family: 'Rock 3D', cursive;
+  font-size: 50px;
+  color: #fc4a1a;
+}
+
+.backcolor {
+  background-color: #4abdac;
+}
+
+.img-content {
+  width: fit-content;
+}
+
+.letter-content {
+  color: #f7b733;
+  font-weight: bolder;
+}
+
+.forgot-password {
+  text-align: right;
+  text-decoration: none;
+  color: #ff6433;
+}
