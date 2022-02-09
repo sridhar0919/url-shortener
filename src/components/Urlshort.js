@@ -122,7 +122,7 @@ export default function Urlshort() {
                           buttonHandler(item?.shortUrl);
                         }}
                       >
-                        http://{process.env.REACT_APP_URL}/{item?.shortUrl}
+                        http://short.lify/{item?.shortUrl}
                       </Button>
                     </td>
                     <td>
