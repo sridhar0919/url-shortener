@@ -22,15 +22,14 @@ export default function ForgotPwd() {
 
   return (
     <>
-      <nav class="navbar navbar-dark">
+      <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand ml-2" href="/">
-          <i class="fas fa-book"></i>
-          Back to login page
+          <i class="fas fa-chevron-left pt-2"></i>&nbsp;&nbsp;Home
         </a>
       </nav>
-      <div className="container mt-5">
+      <div className="container mt-xl-5 mt-sm-2 d-sm-flex flex-column-sm">
         <div className="row">
-          <div className=" offset-2 col-4">
+          <div className=" offset-2 col-xl-4 col-sm-2">
             <ToastContainer />
             <img
               src={forgotPass}
@@ -39,7 +38,7 @@ export default function ForgotPwd() {
               style={{ width: '80%' }}
             />
           </div>
-          <div className="col-4 mt-3">
+          <div className="col-sm-4 col-xl-4 mt-3">
             <h3 className="p-3 text-center">Forgot Password?</h3>
             <p className="text-center text-muted">
               Dont worry it happens.Please enter the email associated with your

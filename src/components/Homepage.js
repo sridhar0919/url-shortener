@@ -7,7 +7,6 @@ import {
   InputGroupText,
   InputGroup,
 } from 'reactstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -43,9 +42,10 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="container mt-4 rounded">
-        <div className="row justify-content-center align-items-center">
-          <div className="col-6 mt-5 back-color">
+      <div className="container mt-xl-4 mt-sm-1 rounded">
+        <ToastContainer />
+        <div className="row justify-content-center align-items-center d-sm-flex flex-column-sm">
+          <div className="col-xl-6 col-sm-2 mt-5 back-color">
             <img
               src={loginImg}
               class="img-fluid img-content"
@@ -53,64 +53,79 @@ export default function Homepage() {
               style={{ width: '100%' }}
             />
           </div>
-          <div className="col-4">
+          <div className="col-xl-4 col-sm-6">
             <h3 className="text-center title-web mb-4">
-              <img src={loginIcon} alt="icon" className="d-inline" />
+              <img src={loginIcon} alt="icon" className="d-inline icon-title" />
               SHORTLIFY
             </h3>
-            <h5 className="text-center mb-4">Welcome..!</h5>
-            <Form onSubmit={signIn}>
-              <ToastContainer />
-              <FormGroup>
-                <InputGroup>
-                  <InputGroupText>
-                    <i className="far fa-envelope"></i>
-                  </InputGroupText>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={email}
-                    id="userEmail"
-                    placeholder="username"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </InputGroup>
-              </FormGroup>
-              <FormGroup>
-                <InputGroup>
-                  <InputGroupText>
-                    <i className="fas fa-unlock-alt"></i>
-                  </InputGroupText>
-                  <Input
-                    type="password"
-                    name="password"
-                    value={password}
-                    id="userPassword"
-                    placeholder="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </InputGroup>
-              </FormGroup>
-              <p className="forgot-password">
-                <a href="/forgot-password" className="forgot-password">
-                  Forgot Password?
-                </a>
-              </p>
-              <Button
-                color="primary"
-                block="true"
-                onClick={(e) => {
-                  signIn();
-                }}
-              >
-                Login
-              </Button>
-              <p className="text-center forgot-password mt-4">
-                <a className="forgot-password" href="/signup">
-                  <h5>Not registered yet? Create an account</h5>
-                </a>
-              </p>
-            </Form>
+            <h5 className="text-center sub-text mb-4">Welcome..!</h5>
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-12 my-1 mb-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i className="far fa-envelope input-icon fa-xs"></i>
+                      </div>
+                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      class="form-control"
+                      autoComplete="off"
+                      id="userEmail"
+                      placeholder="Email id"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div class="col-12 my-1 mb-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text ">
+                        <i className="fas fa-unlock-alt fa-xs"></i>
+                      </div>
+                    </div>
+                    <input
+                      type="password"
+                      name="password"
+                      value={password}
+                      autoComplete="off"
+                      class="form-control"
+                      id="inlineFormInputGroupUsername"
+                      placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <p className="forgot-password w-100">
+                  <a href="/forgot-password" className="forgot-password">
+                    Forgot Password?
+                  </a>
+                </p>
+                <div className="text-center w-100">
+                  <button
+                    className="login-button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signIn();
+                    }}
+                  >
+                    Login
+                  </button>
+                </div>
+
+                <p className="text-center forgot-password mt-4">
+                  <a className="forgot-password" href="/signup">
+                    <h5 className="bottom-text">
+                      Not registered yet? Create an account
+                    </h5>
+                  </a>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
       </div>

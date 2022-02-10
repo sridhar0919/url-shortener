@@ -18,7 +18,66 @@
 }
 
 .forgot-password {
+  display: block;
   text-align: right;
   text-decoration: none;
   color: #ff6433;
+}
+
+.login-button {
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #007bff;
+  padding: 8px 100px;
+  margin-right: 120px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .title-web {
+    font-family: 'Rock 3D', cursive;
+    font-size: 25px;
+    color: #fc4a1a;
+    margin-left: -30px;
+  }
+
+  .sub-text {
+    font-size: 15px;
+    margin-left: -10px;
+  }
+
+  .input-entry {
+    width: 80px;
+  }
+
+  .input-icon {
+    content: '';
+  }
+
+  .icon-title {
+    width: 30px;
+  }
+
+  .login-button {
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #007bff;
+    padding: 8px 50px;
+    margin-right: 130px;
+  }
+
+  .forgot-password {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #ff6433;
+    font-size: 15px;
+    margin-right: 10px;
+  }
+
+  .bottom-text {
+    font-size: 15px;
+    margin-left: 35px;
+  }
 }

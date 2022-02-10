@@ -55,7 +55,7 @@ export default function Urlshort() {
           SHORTLIFY
         </h5>
         <button
-          class="btn btn-secondary"
+          class="logout-button"
           onClick={(e) => {
             window.location.replace('/');
           }}
@@ -65,10 +65,11 @@ export default function Urlshort() {
       </nav>
       <ToastContainer />
       <div className="row mt-4 back-color ">
-        <div className=" offset-sm-2 offset-md-4 col-lg-4 col-sm-8 col-md-4 mt-4 container-sm">
+        <div className=" col-sm-2 offset-md-4 col-lg-4 col-sm-8 col-md-4 mt-4 container-sm">
           <div className="back-color">
-            <h3 className="text-center">
-              <i class="fas fa-compress-arrows-alt pr-2"></i> SIMPLIFY YOUR URL
+            <h3 className="text-center title-heading1">
+              <i class="fas fa-xs fa-compress-arrows-alt pr-2"></i> SIMPLIFY
+              YOUR URL
             </h3>
             <Form onSubmit={submitHandler}>
               <FormGroup>
@@ -77,29 +78,69 @@ export default function Urlshort() {
                   type="url"
                   name="fullUrl"
                   id="fullUrl"
+                  className="input-field"
                   placeholder="Enter URL"
                   autoComplete="off"
                   value={fullURL}
                   required
                   onChange={(e) => setFullURL(e.target.value)}
                 />
-                <Button color="primary" className="mt-3" block="true">
-                  Shorten URL
-                </Button>
+                <button className="mt-3 login-button">Shorten URL</button>
               </FormGroup>
             </Form>
           </div>
         </div>
 
-        <div className="row mt-4 m-3">
+        <div className="row mt-4 m-3 table-content">
           <div className="col-12 mt-3">
-            <h4 className="mb-3">
+            <h4 className="mb-3 title-heading">
               <i class="fas fa-paperclip"></i> RECENT URLS
             </h4>
-            <Table striped bordered hover className="table-dark table-hover">
+            <table class="table-striped table-dark">
+              <thead>
+                <tr className="d-flex">
+                  <th>Full URL</th>
+                  <th className="last1-th">Short URL</th>
+                  <th className="last-th">Clicks</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users?.map((item, index) => (
+                  <tr key={index} className="d-flex">
+                    <td className="irst-column">
+                      <a href={item?.fullUrl} className="text-light ">
+                        {item?.fullUrl}
+                      </a>
+                    </td>
+                    <td className="click1-td">
+                      <Button
+                        type="submit"
+                        color="link"
+                        className="text-light table-content"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          buttonHandler(item?.shortUrl);
+                        }}
+                      >
+                        http://short.lify/{item?.shortUrl}
+                      </Button>
+                    </td>
+                    <td className="click-td">
+                      <h5 className="table-content">{item?.clicks}</h5>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {/* <Table
+              striped
+              bordered
+              hover
+              className="table-dark table-hover mx-sm-3"
+            >
               <thead>
                 <tr>
-                  <th>Full URL</th>
+                  <th className="w-25">Full URL</th>
                   <th>Short URL</th>
                   <th>Clicks</th>
                 </tr>
@@ -108,7 +149,7 @@ export default function Urlshort() {
                 {users?.map((item, index) => (
                   <tr key={index}>
                     <td>
-                      <a href={item?.fullUrl} className="text-light">
+                      <a href={item?.fullUrl} className="text-light ">
                         {item?.fullUrl}
                       </a>
                     </td>
@@ -116,7 +157,7 @@ export default function Urlshort() {
                       <Button
                         type="submit"
                         color="link"
-                        className="text-light"
+                        className="text-light table-content"
                         onClick={(e) => {
                           e.preventDefault();
                           buttonHandler(item?.shortUrl);
@@ -126,12 +167,12 @@ export default function Urlshort() {
                       </Button>
                     </td>
                     <td>
-                      <h5>{item?.clicks}</h5>
+                      <h5 className="table-content">{item?.clicks}</h5>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </Table>
+            </Table> */}
           </div>
         </div>
       </div>

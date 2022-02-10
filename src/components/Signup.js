@@ -42,9 +42,9 @@ export default function Signup() {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-xl-5 mt-sm-2">
         <div className="row">
-          <div className="col-6 mt-5">
+          <div className="col-xl-6 col-sm-2 mt-5">
             <img
               src={signupImg}
               class="img-fluid img-content"
@@ -52,7 +52,7 @@ export default function Signup() {
               style={{ width: '90%' }}
             />
           </div>
-          <div className="col-4">
+          <div className="col-xl-4">
             <ToastContainer />
             <h2 className="p-3 text-center">SIGN UP</h2>
             <p className="text-center text-muted">Please enter your details</p>

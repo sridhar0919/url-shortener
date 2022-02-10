@@ -37,10 +37,10 @@ export default function ResetPassword() {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-xl-5 mt-sm-2">
         <div className="row">
           {/* <div className="offset-lg-4 offset-sm-2 offset-md-4 col-lg-4 col-sm-8 col-md-4 bg-light mt-5 p-3   container-sm"> */}
-          <div className=" offset-2 col-4 mt-5">
+          <div className=" offset-2 col-xl-4 col-sm-2 mt-5">
             <ToastContainer />
             <img
               src={resetPass}
@@ -49,7 +49,7 @@ export default function ResetPassword() {
               style={{ width: '80%' }}
             />
           </div>
-          <div className="col-4 mt-5">
+          <div className="col-sm-4 col-xl-4 mt-5">
             <h3 className="p-3 text-center">Enter new password</h3>
             <Form onSubmit={resetPwd}>
               <FormGroup>
