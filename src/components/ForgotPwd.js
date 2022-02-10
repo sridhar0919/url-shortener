@@ -51,6 +51,7 @@ export default function ForgotPwd() {
                   type="email"
                   name="email"
                   value={email}
+                  autoComplete="off"
                   id="userEmail"
                   placeholder="enter email"
                   onChange={(e) => setEmail(e.target.value)}
