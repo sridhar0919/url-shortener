@@ -2,7 +2,12 @@ var express = require('express');
 var router = express.Router();
 var shortid = require('shortid');
 const { dbUrl, mongob, MongoClient } = require('../dbConfig');
+
 /* GET home page. */
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
 router.get('/shorturls', async (req, res, next) => {
   const client = await MongoClient.connect(dbUrl);
   try {
